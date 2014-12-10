@@ -104,7 +104,7 @@ An easy way to do this for yourself and others is to put it in your `package.jso
         "start": "watchify app/jsx/index.jsx -o app/bundle.js",
         "test": "mocha",
         "app": "nwbuild --run .",
-        "build": "browserify app/jsx/index.jsx -o app/bundle.js && nwbuild . -o build"
+        "build": "browserify app/jsx/index.jsx -o app/bundle.js && nwbuild . -o build",
         "postinstall": "cd node_modules/serialport && node-pre-gyp rebuild --runtime=node-webkit --target=0.11.2"
     }
 }

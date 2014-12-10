@@ -1,0 +1,48 @@
+{
+  "name": "react-nodewebkit",
+  "private": true,
+  "version": "0.0.1",
+  "description": "react node-webkit starter project",
+  "keywords": [],
+  "window": {
+    "icon": "app/images/icon.png",
+    "toolbar": false,
+    "frame": true,
+    "width": 800,
+    "height": 600,
+    "position": "center",
+    "resizable": true
+  },
+  "webkit": {
+    "plugin": false
+  },
+  "main": "app/index.html",
+  "dependencies": {
+    "react": "^0.12.1"
+  },
+  "devDependencies": {
+    "browserify": "^7.0.0",
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1",
+    "node-webkit-builder": "^0.4.0",
+    "reactify": "^0.17.1",
+    "watchify": "^2.1.1"
+  },
+  "scripts": {
+    "start": "watchify app/jsx/index.jsx -o app/bundle.js",
+    "test": "mocha",
+    "app": "nwbuild --run .",
+    "build": "./build/build",
+    "clean": "rm -rf build/cache app/bundle.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
+  }
+}

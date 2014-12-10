@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Build script for POSIX environments
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+rm -rf "${DIR}/cache" && mkdir "${DIR}/cache" && cd "${DIR}/cache" &&
+cp -R "../../app" "../../package.json" . &&
+npm install --production &&
+browserify app/jsx/index.jsx -o app/bundle.js &&
+nwbuild . -o ../builds -p win,osx,linux32,linux64

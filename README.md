@@ -79,37 +79,11 @@ For compiled native modules (like `serialport` in the example above) you will ne
 npm install -g node-pre-gyp
 npm install --save serialport
 cd node_modules/serialport
-node-pre-gyp rebuild --runtime=node-webkit --target=0.11.2
+node-pre-gyp rebuild --runtime=node-webkit --target=0.11.2 --target_arch=ia32
 ```
 
-An easy way to do this for yourself and others is to put it in your `package.json` under `scripts.postinstall` & `devDependencies`:
+I also had an [issue](https://github.com/voodootikigod/node-serialport/issues/374) with the serialport native module being put in the wrong folder. I resolved it, like this:
 
-```json
-{
-    "dependencies": {
-        "serialport": ""
-    },
-
-    "devDependencies": {
-        "browserify": "^7.0.0",
-        "chai": "^1.10.0",
-        "mocha": "^2.0.1",
-        "node-webkit-builder": "^0.4.0",
-        "reactify": "^0.17.1",
-        "watchify": "^2.1.1",
-        "node-pre-gyp": ""
-    },
-
-    "scripts": {
-        "start": "watchify app/jsx/index.jsx -o app/bundle.js",
-        "test": "mocha",
-        "app": "nwbuild --run .",
-        "build": "./build/build",
-        "postinstall": "cd node_modules/serialport && node-pre-gyp rebuild --runtime=node-webkit --target=0.11.2"
-    }
-}
 ```
-
-Also, I was having an [issue with the serialport being put in the wrong folder](https://github.com/voodootikigod/node-serialport/issues/374). I resolved it by typing `cd node_modules/serialport && mv build/serialport/v1.4.6/Release/node-webkit-v0.11.2-darwin-x64/ build/serialport/v1.4.6/Release/node-webkit-v14-darwin-x64/`. Basically,  I just moved the compiled file in `Release/<target>` to the file it was missing.  This will eventually be fixed, upstream, I think.
-
-Now, when you or your friends do a `npm install`,  all the good stuff happens.
+mv node_modules/serialport/build/serialport/v1.4.6/Release/node-webkit-v0.11.2-darwin-ia32/ node_modules/serialport/build/serialport/v1.4.6/Release/node-webkit-v14-darwin-ia32
+```

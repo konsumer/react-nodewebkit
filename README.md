@@ -110,6 +110,6 @@ An easy way to do this for yourself and others is to put it in your `package.jso
 }
 ```
 
-Also, I was having an [issue with the serialport being put in the wrong folder](https://github.com/voodootikigod/node-serialport/issues/374). I resolved it by typing `mv build/serialport/v1.4.6/Release/node-webkit-v0.11.2-darwin-x64/ build/serialport/v1.4.6/Release/node-webkit-v14-darwin-x64/`. Basically,  I just moved the compiled file in `Release/<target>` to the file it was missing.  This will eventually be fixed, upstream, I think.
+Also, I was having an [issue with the serialport being put in the wrong folder](https://github.com/voodootikigod/node-serialport/issues/374). I resolved it by typing `cd node_modules/serialport && mv build/serialport/v1.4.6/Release/node-webkit-v0.11.2-darwin-x64/ build/serialport/v1.4.6/Release/node-webkit-v14-darwin-x64/`. Basically,  I just moved the compiled file in `Release/<target>` to the file it was missing.  This will eventually be fixed, upstream, I think.
 
 Now, when you or your friends do a `npm install`,  all the good stuff happens.

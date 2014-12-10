@@ -93,11 +93,11 @@ An easy way to do this for yourself and others is to put it in your `package.jso
     "devDependencies": {
         "browserify": "^7.0.0",
         "chai": "^1.10.0",
-        "fs-extra": "^0.12.0",
         "mocha": "^2.0.1",
         "node-webkit-builder": "^0.4.0",
         "reactify": "^0.17.1",
-        "watchify": "^2.1.1"
+        "watchify": "^2.1.1",
+        "node-pre-gyp": ""
     },
 
     "scripts": {

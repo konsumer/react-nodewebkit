@@ -36,9 +36,8 @@ in `app/shim.js`, I make a fake module that does something similar to `serial.li
 
 (function(){
     function shim(name){
-        var fakePorts = [
-        ];
-
+        var fakePorts = [{comName:"Fake COM1"}, {comName:"Fake COM2"}];
+        
         switch(name){
             case 'serialport': return {
                 list: function(cb){

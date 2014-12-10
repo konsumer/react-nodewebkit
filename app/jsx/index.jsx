@@ -1,3 +1,5 @@
+/* @jsx React.DOM */
+
 var React = require('react');
 var HelloWorld = require('./components/HelloWorld.jsx');
 

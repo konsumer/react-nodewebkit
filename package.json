@@ -29,7 +29,7 @@
     "watchify": "^2.1.1"
   },
   "scripts": {
-    "start": "watchify app/jsx/index.jsx -o app/bundle.js",
+    "start": "watchify app/jsx/index.jsx -o app/bundle.js -v",
     "test": "mocha",
     "app": "nwbuild --run .",
     "build": "./build/build",

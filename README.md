@@ -56,22 +56,7 @@ Pretty simple, eh?
 
 You don't need to fake every native module completely, and not doing so can help you keep track of what exactly is needed from the native system, just in case you do native things differently in the future ([cordova](http://cordova.apache.org/), [atom-shell](https://github.com/atom/atom-shell), [CEF](https://code.google.com/p/chromiumembedded/), etc.)
 
-#### more on browserify
-
-If you hate this elegant simplicity, feel free to use [browserify options](https://github.com/substack/node-browserify) to do something clever. I put the build options in `package.json`. I imagine you could ignore `serialport` and do a try/catch in your application code to shim it, as needed.
-
-### node run
-
-Instead of using a [proper task-runner](http://gulpjs.com/), I just put tasks inside the `package.json` file to reduce the configuration/dependency overhead & keep things simple & light.
-
-*  `npm start` - watch file for changes & rebuild
-*  `npm test` - run mocha all tests in `test/`
-*  `npm run app` - run node-webkit app
-*  `npm run build` - Build the app as an executable for the current platform
-
-I develop features, like this: `npm start && open app/index.html`
-
-#### native modules
+#### more on native modules
 
 For compiled native modules (like `serialport` in the example above) you will need to compile them specifically for node-webkit:
 
@@ -87,3 +72,18 @@ I also had an [issue](https://github.com/voodootikigod/node-serialport/issues/37
 ```
 mv node_modules/serialport/build/serialport/v1.4.6/Release/node-webkit-v0.11.2-darwin-ia32/ node_modules/serialport/build/serialport/v1.4.6/Release/node-webkit-v14-darwin-ia32
 ```
+
+#### more on browserify
+
+If you hate this elegant simplicity, feel free to use [browserify options](https://github.com/substack/node-browserify) to do something clever. I put the build options in `package.json`. I imagine you could ignore `serialport` and do a try/catch in your application code to shim it, as needed.
+
+### node run
+
+Instead of using a [proper task-runner](http://gulpjs.com/), I just put tasks inside the `package.json` file to reduce the configuration/dependency overhead & keep things simple & light.
+
+*  `npm start` - watch file for changes & rebuild
+*  `npm test` - run mocha all tests in `test/`
+*  `npm run app` - run node-webkit app
+*  `npm run build` - Build the app as an executable for the current platform
+
+I develop features, like this: `npm start & open app/index.html`

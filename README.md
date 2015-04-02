@@ -2,7 +2,7 @@
 
 Download this skeleton if you want a no-nonsense react starter project for making standalone [node-webkit](https://github.com/rogerwang/node-webkit) apps.  It uses [skeleton.css](http://getskeleton.com/) and will get you started super-quick and look rad.
 
-This project is [MIT licensed](http://opensource.org/licenses/MIT), but I think it'd be real sweet if you told people you started your awesome project using mine.
+This project is [MIT licensed](http://opensource.org/licenses/MIT), and although totally not required, I think it'd be real sweet if you told people you started your awesome project using mine.
 
 
 ## development

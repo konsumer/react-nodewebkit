@@ -18,15 +18,15 @@
   },
   "main": "app/index.html",
   "dependencies": {
-    "react": "^0.12.1"
+    "react": "^0.13.3"
   },
   "devDependencies": {
-    "browserify": "^7.0.0",
-    "chai": "^1.10.0",
+    "browserify": "^11.1.0",
+    "chai": "^3.2.0",
     "mocha": "^2.0.1",
-    "node-webkit-builder": "^0.4.0",
-    "reactify": "^0.17.1",
-    "watchify": "^2.1.1"
+    "nw-builder": "^2.0.2",
+    "reactify": "^1.1.1",
+    "watchify": "^3.4.0"
   },
   "scripts": {
     "start": "watchify app/jsx/index.jsx -o app/bundle.js -v",
